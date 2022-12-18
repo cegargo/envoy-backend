@@ -1,3 +1,4 @@
 .env/
 __pycache__
 envoy/db.sqlite3
+00*.py
