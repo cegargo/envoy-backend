@@ -8,5 +8,5 @@ COPY ./requirements.txt /requirements.txt
 
 RUN pip3 install -r /requirements.txt
 
-RUN adduser -D user
-USER user
+RUN adduser -D dev
+USER dev
