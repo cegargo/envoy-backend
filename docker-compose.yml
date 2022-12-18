@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  envoy:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/envoy
+
+    command: sh -c "python3 envoy/manage.py runserver 0.0.0.0:8000"
