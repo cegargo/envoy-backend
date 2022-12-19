@@ -1,4 +1,5 @@
-.env/
+env/
 __pycache__
+migrations
 envoy/db.sqlite3
 00*.py
