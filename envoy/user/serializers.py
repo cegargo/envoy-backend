@@ -11,12 +11,12 @@ class UserSerializer(serializers.ModelSerializer):
 class FacultySerializer(serializers.ModelSerializer):
     class Meta:
         model = Faculty
-        fields = ('FacultyName', 'CourseAdministered',
-                  'FacultyEmail', 'FacultyPassword')
+        fields = ('Name', 'Course',
+                  'Email', 'Password')
 
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ('StudentName', 'CourseEnrolled',
-                  'StudentEmail', 'StudentPassword')
+        fields = ('Name', 'Course',
+                  'Email', 'Password')
