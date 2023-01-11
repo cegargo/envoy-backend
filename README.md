@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+- [Project](#project)
 - [Dependencies]
 - [Setup](#setup)
 - [Django](#django)
@@ -10,6 +11,15 @@
   - [Setup Admin User](#setup-admin-user)
   - [Admin Interface](#admin-interface)
 - [Resources used](#resources-used)
+
+### Project
+
+- envoy/
+  - announcement/
+  - api/
+  - auth/
+  - envoy/
+  - user/
 
 ### Dependencies
 

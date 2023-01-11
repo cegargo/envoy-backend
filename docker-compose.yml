@@ -10,3 +10,14 @@ services:
       - .:/envoy
 
     command: sh -c "python3 envoy/manage.py runserver 0.0.0.0:8000"
+#   database:
+#     image: mysql:latest
+#     environment:
+#       MYSQL_DATABASE: envoy
+#       MYSQL_USER: clint
+#       MYSQL_PASSWORD: 0227
+#       MYSQL__ROOT_PASSWORD: 0227
+#     volumes:
+#       - .:/envoy
+#     ports:
+#       - "8000:8000"
