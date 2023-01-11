@@ -4,7 +4,7 @@
 # from rest_framework import status
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView, ListAPIView
 from rest_framework.viewsets import ModelViewSet
 from user.models import User, Faculty, Student
 from user.serializers import UserSerializer, FacultySerializer, StudentSerializer
@@ -53,7 +53,7 @@ class FacultyDataAPIView(RetrieveDestroyAPIView):
 
     def get(self, request, email):
         try:
-            obj = Faculty.objects.get(FacultyEmail=email)
+            obj = Faculty.objects.get(Email=email)
             return Response(FacultySerializer(obj).data)
         except Faculty.DoesNotExist:
             return Response(status=status.HTTP_400_BAD_REQUEST)
@@ -75,7 +75,7 @@ class StudentDataAPIView(RetrieveDestroyAPIView):
 
     def get(self, request, email):
         try:
-            obj = Student.objects.get(StudentEmail=email)
+            obj = Student.objects.get(Email=email)
             return Response(StudentSerializer(obj).data)
         except Student.DoesNotExist:
             return Response(status=status.HTTP_400_BAD_REQUEST)
@@ -87,9 +87,9 @@ class AnnouncementView(RetrieveDestroyAPIView):
 
     def get(self, request, college):
         try:
-            college_obj = Announcement.objects.filter(
+            obj = Announcement.objects.filter(
                 college=college)
-            return Response(AnnouncementSerializer(college_obj).data)
+            return Response(AnnouncementSerializer(obj).data)
         except Announcement.DoesNotExist:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
@@ -102,3 +102,13 @@ class AnnouncementListCreateAPIView(ListCreateAPIView):
 class AnnouncementListRetrieveDestroyAPIView(RetrieveDestroyAPIView):
     queryset = Announcement.objects.all()
     serializer_class = AnnouncementSerializer
+
+
+class AnnouncementContentListCreateAPIView(ListCreateAPIView):
+    queryset = AnnouncementContent.objects.all()
+    serializer_class = AnnouncementContentSerializer
+
+
+class AnnouncementContentListRetrieveDestroyAPIView(RetrieveDestroyAPIView):
+    queryset = AnnouncementContent.objects.all()
+    serializer_class = AnnouncementContentSerializer
