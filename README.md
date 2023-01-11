@@ -45,6 +45,7 @@ pip3 install -r requirements.txt
 ./manage makemigrations
 ./manage migrate
 ./manage.py migrate --run-syncdb
+./manage.py runserver <IP_ADDRESS>:8000
 ```
 
 ### Docker
