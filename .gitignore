@@ -3,3 +3,9 @@ __pycache__
 migrations
 envoy/db.sqlite3
 00*.py
+envoy/media/
+
+*.png
+*.jpg
+*.jpeg
+*.gif
