@@ -11,4 +11,4 @@ class AnnouncementSerializer(serializers.ModelSerializer):
 class AnnouncementContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = AnnouncementContent
-        fields = ('Description', 'Image', 'URL')
+        fields = ('AnnouncementID', 'Description', 'Image', 'URL')
